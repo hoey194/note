@@ -106,3 +106,7 @@ pnpm run dev
 11. 启动后端
 
 分别运行MasterServer, WorkerServer, ApiApplicationServer
+
+
+
+参考文档：https://www.bookstack.cn/read/dolphinscheduler-3.1.0-en/af18cd17a04eb31f.md
