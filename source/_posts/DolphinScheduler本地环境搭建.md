@@ -1,5 +1,5 @@
 ---
-title: DolphonScheduler 3.1.0 本地环境搭建
+title: DolphinScheduler 3.1.0 本地环境搭建
 date: 2022-12-28 22:29:17
 tags:
 ---
@@ -31,13 +31,13 @@ git checkout 3.1.0-release
 
 3.编译项目
 
-spotless是一种代码格式化工具，使用 spotless:apply 表示开启module代码格式校验
+spotless是一种代码格式化工具，使用 spotless:apply 表示格式化module代码
 
 mvnw同mvn的功能是一样的，mvnw做了项目适配
 
 ```shell
 ./mvnw spotless:apply 
-./mvnw clean install -Prelease -Dmaven.test.skip=true
+./mvnw clean install -Prelease -Dmaven.test.skip=true -Dcheckstyle.skip=true -Dmaven.javadoc.skip=true
 ```
 
 4.在mysql创建database数据库
@@ -45,6 +45,8 @@ mvnw同mvn的功能是一样的，mvnw做了项目适配
 ```sql
 CREATE SCHEMA dolphinschedulertest;
 ```
+
+找到脚本dolphinscheduler-dao/src/main/resources/sql/dolphinscheduler_mysql.sql并运行
 
 5.修改项目配置文件
 
@@ -113,3 +115,61 @@ pnpm run dev
 登陆账号密码 <font color="red">admin/dolphinscheduler123</font>
 
 参考文档：https://www.bookstack.cn/read/dolphinscheduler-3.1.0-en/af18cd17a04eb31f.md
+
+
+
+编译错误1：
+
+```shell
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.12.1:pnpm (pnpm install) on project dolphinscheduler-ui: Failed to run task: 'pnpm install' failed. org.apache.commons.exec.ExecuteException: Process exited with an error: 9 (Exit value: 9) -> [Help 1]
+```
+
+解决办法：
+
+修改dolphinscheduler-ui模块下的pom.xml，修改后记得重新执行``./mvnw spotless:apply``格式化代码
+
+```xml
+<!--                <plugins>-->
+<!--                    <plugin>-->
+<!--                        <groupId>com.github.eirslett</groupId>-->
+<!--                        <artifactId>frontend-maven-plugin</artifactId>-->
+<!--                        <version>${frontend-maven-plugin.version}</version>-->
+<!--                        <configuration>-->
+<!--                            <pnpmInheritsProxyConfigFromMaven>false</pnpmInheritsProxyConfigFromMaven>-->
+<!--                        </configuration>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>install node and pnpm</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>install-node-and-pnpm</goal>-->
+<!--                                </goals>-->
+<!--                                <configuration>-->
+<!--                                    <nodeVersion>${node.version}</nodeVersion>-->
+<!--                                    <pnpmVersion>${pnpm.version}</pnpmVersion>-->
+<!--                                </configuration>-->
+<!--                            </execution>-->
+<!--                            <execution>-->
+<!--                                <id>pnpm install</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>pnpm</goal>-->
+<!--                                </goals>-->
+<!--                                <phase>generate-resources</phase>-->
+<!--                                <configuration>-->
+<!--                                    <arguments>install</arguments>-->
+<!--                                </configuration>-->
+<!--                            </execution>-->
+<!--                            <execution>-->
+<!--                                <id>pnpm run build:prod</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>pnpm</goal>-->
+<!--                                </goals>-->
+<!--                                <configuration>-->
+<!--                                    <arguments>run build:prod</arguments>-->
+<!--                                </configuration>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+
+```
+
