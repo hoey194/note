@@ -1,5 +1,6 @@
 ---
 title: 基于Python的简易FS服务
+abbrlink: b422eee5
 date: 2022-12-12 16:43:04
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: Mac自动SSH+MFA
+abbrlink: 30d40687
 date: 2022-12-08 19:39:34
 tags:
 ---
