@@ -2,7 +2,6 @@
 title: Mac下VIM配置
 abbrlink: 7a63f10c
 date: 2022-12-08 22:20:30
-tags:
 ---
 
 
