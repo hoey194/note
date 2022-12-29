@@ -135,7 +135,6 @@ dist
 .github/
 .npmignore
 db.json
-package-lock.json
 public/
 
 themes/next/node_modules

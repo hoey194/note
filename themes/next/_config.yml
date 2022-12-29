@@ -98,7 +98,7 @@ menu:
   #categories: /categories/|| th
   archives: /archives/|| archive
   #schedule: /schedule/|| calendar
-  #sitemap: /sitemap.xml|| sitemap
+  sitemap: /sitemap.xml|| sitemap
   #commonweal: /404/|| heartbeat
 
 # Enable/Disable menu icons.
@@ -357,7 +357,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 43f2ad51dd03ad146d67cc622d4e11e2
 
 # Duoshuo ShortName
 #duoshuo_shortname:
