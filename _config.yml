@@ -108,7 +108,9 @@ exclude:
 ignore:
 
 # Extensions
-plugins: hexo-generator-sitemap
+plugins:
+  - hexo-generator-sitemap
+  - hexo-generator-baidu-sitemap
 
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
