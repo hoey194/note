@@ -15,6 +15,7 @@ tags:
 - [Maven](http://maven.apache.org/download.cgi): v3.5+
 - [Node](https://nodejs.org/en/download): v16.13+ (dolphinScheduler version is lower than 3.0, please install node v12.20+)
 - [Pnpm](https://pnpm.io/installation): v6.x
+- Zookeeper: 3.8
 
 
 

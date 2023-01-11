@@ -96,7 +96,9 @@ sh juneyao_auto_ssh_prd.sh -HOST=jmp.juneyaoair.com -PORT=2222 -PASSWORD=123123
 
 在ITerm2终端中进行配置
 
-Preference... -> Profiles -> +![image.png](http://tva1.sinaimg.cn/large/0066vfZIgy1h8woxb34vqj31y01dwe81.jpg)
+Preference... -> Profiles -> +
+
+![image-20230105095419303](https://hoey-images.oss-cn-hangzhou.aliyuncs.com/img/image-20230105095419303.png)
 
 
 
