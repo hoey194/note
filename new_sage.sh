@@ -11,4 +11,5 @@ fi
 hexo new post "\"${title}\""
 mv /Users/hoey/workspace/hexo/blog-src/note/source/_posts/${title}.md /Users/hoey/workspace/hexo/blog-src/note/source/sage/${title}.md
 
+open /Users/hoey/workspace/hexo/blog-src/note/source/sage/${title}.md
 
