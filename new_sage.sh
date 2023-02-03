@@ -4,7 +4,7 @@
 
 title=$1
 
-if [ "${title}" == "吉事语" ]; then
+if [ "${title}"=="吉事语" ]; then
   title=$title`date +%y%m%d`
 fi
 
