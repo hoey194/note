@@ -1,5 +1,6 @@
 ---
 title: panda chapter 1
+abbrlink: 129de9c2
 date: 2023-03-31 14:20:46
 tags:
 ---

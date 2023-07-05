@@ -1,5 +1,6 @@
 ---
 title: ksqlDB
+abbrlink: f30a9b25
 date: 2023-03-14 16:16:12
 tags:
 ---
