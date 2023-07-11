@@ -9,7 +9,7 @@ tags:
 
 之前介绍了Docker中部署多节点集群见链接[Docker部署多节点Hadoop](https://blog.hoey.tk/2020/11/15/2020%E5%B9%B411%E6%9C%8815%E6%97%A514:11:53_%E4%BD%BF%E7%94%A8docker%E9%83%A8%E7%BD%B2hadoop/)
 
-在开发环境中，但节点的集群用来做验证还是十分方便的，下面介绍一下部署单节点的Hadoop集群。
+在开发环境中，单节点的集群用来做验证还是十分方便的，下面介绍一下部署单节点的Hadoop集群。
 
 
 
@@ -28,7 +28,7 @@ docker network ls
 
 ### 创建容器
 
-创建容器时，开放端口8088（Yarn）、9000（HDFS通信端口，新版本时8020）、50010（数据传输端口）
+创建容器时，开放端口8088（Yarn）、9000（HDFS通信端口，新版本时8020）、50010（数据传输端口）、50075（web页面下载文件端口）
 
 ```shell
 docker run --name hadoop-standalone \
@@ -39,6 +39,7 @@ docker run --name hadoop-standalone \
 -p 9000:9000 \
 -p 8020:8020 \
 -p 50010:50010 \
+-p 50075:50075 \
 -d -P ryaning/hadoop
 ```
 
@@ -58,6 +59,7 @@ docker run --name hadoop-standalone \
 -p 9000:9000 \
 -p 8020:8020 \
 -p 50010:50010 \
+-p 50075:50075 \
 -d -P ryaning/hadoop
 ```
 
@@ -98,7 +100,7 @@ export JAVA_HOME=/usr/local/jdk1.8
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <value>hdfs://hadoop-standalone:9000</value>
     </property>
     <property>
         <name>hadoop.tmp.dir</name>
@@ -115,6 +117,10 @@ export JAVA_HOME=/usr/local/jdk1.8
 
 ```shell
 <configuration>
+	<property>
+        <name>dfs.datanode.use.datanode.hostname</name>
+        <value>true</value>
+	</property>
     <property>
         <name>dfs.replication</name>
         <value>1</value>
