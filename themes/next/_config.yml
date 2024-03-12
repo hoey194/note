@@ -374,8 +374,8 @@ disqus:
 # changyan
 changyan:
   enable: false
-  appid:
-  appkey:
+  appid: cyxb5v8HX
+  appkey: f89e448a89b9396902ece9b07ad438d3
 
 
 # Valine.
@@ -383,8 +383,8 @@ changyan:
 # more info please open https://valine.js.org
 valine:
   enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  appid:  DPDasjkkGIlQMSK0wajzCXWN-MdYXbMMI
+  appkey: oaHI5uU3JqsK2uJYQhvHSMaH 
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
